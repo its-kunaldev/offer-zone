@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/offer-zone/static/css/main.31530443.css",
+    "main.js": "/offer-zone/static/js/main.e53dcd80.js",
+    "static/js/787.da27990c.chunk.js": "/offer-zone/static/js/787.da27990c.chunk.js",
+    "static/media/ads1.png": "/offer-zone/static/media/ads1.78acbf5662c9fafb1539.png",
+    "static/media/ads2.png": "/offer-zone/static/media/ads2.0d51d63b758ed98e6edd.png",
+    "index.html": "/offer-zone/index.html",
+    "main.31530443.css.map": "/offer-zone/static/css/main.31530443.css.map",
+    "main.e53dcd80.js.map": "/offer-zone/static/js/main.e53dcd80.js.map",
+    "787.da27990c.chunk.js.map": "/offer-zone/static/js/787.da27990c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31530443.css",
+    "static/js/main.e53dcd80.js"
+  ]
+}
