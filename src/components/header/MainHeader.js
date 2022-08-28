@@ -20,9 +20,9 @@ const MainHeader = () => {
                     </button>
                     <nav>
                         <ul>
-                            <button><a href="">We are hiring!</a></button>
+                            <button><a href="#">We are hiring!</a></button>
                             <button>How it works</button>
-                            <button><a href="">List your Busines</a></button>
+                            <button><a href="#">List your Busines</a></button>
                             <button>Login/Sign in</button>
                         </ul>
                     </nav>

@@ -4,7 +4,7 @@ import './AdsSection.css';
 
 const AdsSection = (props) => {
     return(
-        <div className='adSection section'> {props.children} </div>
+        <div className='section ads'> {props.children} </div>
     )
 };
 

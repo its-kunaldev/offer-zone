@@ -1,7 +1,8 @@
-.adSection {
-    width: 100%;
-    height: 7rem;
-    border-radius: 15px;
+.ads {
+    width: 85%;
+    height: 13rem;
+    border-radius: 6px;
     background-color: black;
-    margin: 15px 0;
+    margin: 1.5rem auto;
+    overflow: hidden;
 }
