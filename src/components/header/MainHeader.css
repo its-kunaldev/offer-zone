@@ -61,6 +61,12 @@
     padding: 10px 0;
 }
 
+.header img {
+    width: 16rem;
+    color: white;
+    /* background-color: red; */
+}
+
 .header input {
     width: 0;
     transition: 1s ease-in;
@@ -93,7 +99,7 @@
     color: var(--primary-color);
 }
 
-.header:hover input{
+.search_btn:hover input{
     width: 30rem;
 }
 

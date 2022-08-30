@@ -29,7 +29,7 @@ const MainHeader = () => {
                 </div>
             </article>
             <header className='section header'>
-                <h1>Offer<span>Zone</span></h1>
+                <img src={require('../../assests/logo3.png')} alt="logo"/>
                 <div className="search_btn">
                     <input type="text" placeholder= '🔍 Search restaurants, spa, events'/>
                     <button>Search</button>
