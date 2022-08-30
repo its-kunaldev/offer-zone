@@ -1,0 +1,99 @@
+.nearbuy_offers {
+    margin: 8rem auto;
+}
+
+.nearbuy_offers h2 {
+    margin-bottom: 1.5rem;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.title {
+    font-size: 24px;
+    letter-spacing: 0.8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.title a {
+    font-size: 18.5px;
+    text-decoration: none;
+}
+
+.offer_card {
+    width: 19rem;
+    /* height: 25rem; */
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 15px rgb(0 0 0 / 10%);
+    border: 1px solid #e0e0e0;
+    transition: 0.3s ease-in;
+    /* display: inline-block;
+    margin: 1rem; */
+}
+
+.offer_card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 20px 10px rgb(0 0 0 / 10%);
+}
+
+.categories {
+    color: rgb(134, 133, 133);
+}
+
+.img_section {
+    flex-basis: 45%;
+}
+
+.img_section img {
+    width: 100%;
+}
+
+.offer_details {
+    padding: 15px 10px;
+    flex-basis: 55%;
+}
+
+.offer_details h2 {
+    color: rgba(51, 51, 51, 0.852);
+    letter-spacing: 1px;
+    font-size: 19px;
+}
+
+.offer_details p{
+    margin-top: 5px;
+    font-size: 14px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.line {
+    margin: 2rem 0 1rem 0;
+}
+
+.offer_amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price del {
+    color: gray;
+}
+
+.price p {
+    color: rgb(39, 153, 39);
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.how_much_off {
+    background: #ef534e4b;
+    color: #ef534e;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
