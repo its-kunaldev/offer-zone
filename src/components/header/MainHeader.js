@@ -9,7 +9,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const MainHeader = () => {
     return (
         <>
-            <article>
+            <header className='main-header'>
                 <div className="basic_links">
                     <button className='set_location'>
                         <span><ImLocation2 />Select location</span>
@@ -27,16 +27,17 @@ const MainHeader = () => {
                         </ul>
                     </nav>
                 </div>
-            </article>
-            <header className='section header'>
-                <img src={require('../../assests/logo3.png')} alt="logo"/>
-                <div className="search_btn">
-                    <input type="text" placeholder= '🔍 Search restaurants, spa, events'/>
-                    <button>Search</button>
+                {/* </header> */}
+                <div className='header'>
+                    <img src={require('../../assests/logo3.png')} alt="logo"/>
+                    <div className="search_btn">
+                        <input type="text" placeholder= '🔍 Search restaurants, spa, events'/>
+                        <button>Search</button>
+                    </div>
                 </div>
+            <hr />
             </header>
 
-            <hr />
 
             <nav className='categories section'>
                 <FaArrowLeft className='arrow'/>

@@ -1,9 +1,17 @@
-.basic_links {
+.main-header {
     width: 100%;
-    background-color: rgba(122, 122, 122, 0.114);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.basic_links {
+    background-color: rgb(230, 227, 227);
     display: flex;
     justify-content: space-between;
     padding: 8px 8%;
+    z-index: 20;
 }
 
 .basic_links nav ul button {
@@ -58,7 +66,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 6%;
+    background-color: white;
+    /* position: fixed;
+    left: 0;
+    top: 2rem; */
 }
 
 .header img {

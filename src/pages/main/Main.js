@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import MainHeader from '../../components/header/MainHeader';
 import Brands from '../../components/section/brands/Brands';
+import NearbyOffer from '../../components/section/offers/NearbyOffer';
 import AdsSection from '../../components/UI/ads/AdsSection';
 import AnimatedAds from '../../components/UI/ads/AnimatedAds';
 
@@ -18,6 +19,7 @@ const Main = () => {
                 <img src={require('../../assests/ads2.png')} alt="ads" className='ads-img' />
             </AdsSection>
             <Brands />
+            <NearbyOffer />
         </>
     )
 };
