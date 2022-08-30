@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Footer from '../../components/footer/Footer';
 import MainHeader from '../../components/header/MainHeader';
 import Brands from '../../components/section/brands/Brands';
 import NearbyOffer from '../../components/section/offers/NearbyOffer';
@@ -20,6 +21,7 @@ const Main = () => {
             </AdsSection>
             <Brands />
             <NearbyOffer />
+            <Footer />
         </>
     )
 };

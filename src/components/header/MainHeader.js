@@ -35,9 +35,8 @@ const MainHeader = () => {
                         <button>Search</button>
                     </div>
                 </div>
-            <hr />
             </header>
-
+            <hr />
 
             <nav className='categories section'>
                 <FaArrowLeft className='arrow'/>
