@@ -1,17 +1,42 @@
 .moving_ads {
     margin: 1.5rem 0;
-    width: 100%;
+    /* width: 100%; */
     height: 15rem;
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
     background-color: var(--light-color);
     /* overflow-x: scroll; */
     position: relative;
 }
 
+
 .all_ads {
-    position: absolute;
-    top: 0;
-    left: -2rem;
+    width: 260%;
     display: flex;
+    border-radius: 1rem;
+    position: absolute;
+    left: -260%;
+    animation: ads 30s  linear infinite;
+}
+
+@keyframes ads {
+    0% {
+        left: -260%;
+    }
+    /* 50% {
+        left: 100%;
+    } */
+    100% {
+        left: 100%;
+    }
+}
+
+.ad {
+    width: 85%;
+    margin: 0 1rem;
+}
+
+.ad img {
+    width: 100%;
 }

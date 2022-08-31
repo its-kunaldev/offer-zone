@@ -67,7 +67,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 6%;
-    background-color: black;
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    /* background-color: black; */
     /* position: fixed;
     left: 0;
     top: 2rem; */

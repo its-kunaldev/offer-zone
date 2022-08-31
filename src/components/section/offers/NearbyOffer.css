@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .title {
@@ -24,6 +25,7 @@
 
 .offer_card {
     width: 19rem;
+    max-height: 25rem;
     /* height: 25rem; */
     /* background-color: gray; */
     display: flex;
@@ -46,10 +48,12 @@
 
 .img_section {
     flex-basis: 45%;
+    overflow: hidden;
 }
 
 .img_section img {
     width: 100%;
+    /* background-size: contain; */
 }
 
 .offer_details {

@@ -6,12 +6,17 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
 
-const MainHeader = () => {
+const MainHeader = (props) => {
+
+    const manageCityHandler = () => {
+        props.cityButtonClick(true);
+    }
+
     return (
         <>
             <header className='main-header'>
                 <div className="basic_links">
-                    <button className='set_location'>
+                    <button onClick={manageCityHandler} className='set_location'>
                         <span><ImLocation2 />Select location</span>
                         <span>
                             <p>new dehli</p>
