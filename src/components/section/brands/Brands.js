@@ -6,8 +6,30 @@ import './Brands.css';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 
+let x = 0;
 
 const Brands = () => {
+
+    const leftsideMovementHandler = () => {
+        const leftside = document.querySelector('.brands_slider');
+        if(x === 0){
+            return;
+        }
+        x = x + 20;
+        leftside.style.left = x + '%';
+
+    }
+
+    const rightsideMovementHandler = () => {
+        const leftside = document.querySelector('.brands_slider');
+        if(x < -50){
+            return;
+        }
+        x = x - 20;
+        leftside.style.left = x + '%';
+
+    }
+
     return(
         <>
             <div className="brands_section section">
@@ -70,12 +92,12 @@ const Brands = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="moving_left">
+                    <button onClick={leftsideMovementHandler} className="moving_left">
                         <IoIosArrowBack className='move_icon'/>
-                    </div>
-                    <div className="moving_right">
+                    </button>
+                    <button onClick={rightsideMovementHandler} className="moving_right">
                         <IoIosArrowForward className='move_icon'/>
-                    </div>
+                    </button>
                 </div>
             </div>
         </>
