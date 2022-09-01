@@ -10,7 +10,6 @@
 
 .all_brands {
     height: 9rem;
-    /* background-color: black; */
     margin-top: 1rem;
     position: relative;
 }
@@ -20,7 +19,7 @@
     top: 0;
     left: 20px;
     display: flex;
-    /* overflow: scroll; */
+    transition: 0.2s linear;
 }
 
 .brand_card {
@@ -96,4 +95,5 @@
 
 .move_icon {
     font-size: 25px;
+    cursor: pointer;
 }
