@@ -1,4 +1,6 @@
-import React, { Fragment, useState } from 'react'
+import React  from 'react'
+import { useSelector } from 'react-redux';
+
 import Footer from '../../components/footer/Footer';
 import MainHeader from '../../components/header/MainHeader';
 import Brands from '../../components/section/brands/Brands';
@@ -6,25 +8,21 @@ import NearbyOffer from '../../components/section/offers/NearbyOffer';
 import OtherOffers from '../../components/section/offers/other offers/OtherOffers';
 import AdsSection from '../../components/UI/ads/AdsSection';
 import AnimatedAds from '../../components/UI/ads/AnimatedAds';
-import ModalWindow from '../../components/UI/ads/modal window/ModalWindow';
+import ModalWindow from '../../components/UI/modal window/ModalWindow';
+import Searches from '../../components/UI/search section/Searches';
 
 import './Main.css';
 
 const Main = () => {
 
-    const [isClicked, setIsClicked] = useState(false);
-
-    const cityHandler = (val) => {
-        setIsClicked(val);
-    }
+    const isFocus = useSelector(state => state.uiSliceReducer.isFocus);
 
     return(
         <>
-            <MainHeader cityButtonClick={cityHandler}/>
+            <ModalWindow />
+            {isFocus && <Searches />}
+            <MainHeader />
             <AnimatedAds />
-            {/* <AdsSection>
-                <img src={require('../../assests/ads1.png')} alt="ads" className='ads-img' />
-            </AdsSection> */}
             <AdsSection>
                 <img src={require('../../assests/ads2.png')} alt="ads" className='ads-img' />
             </AdsSection>
@@ -39,7 +37,6 @@ const Main = () => {
                 <img src={require('../../assests/ads4.png')} alt="ads" className='ads-img' />
             </AdsSection>
             <Footer />
-            <ModalWindow isShow={isClicked} cityButtonClick={cityHandler}/>
         </>
     )
 };

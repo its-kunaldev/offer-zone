@@ -1,15 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './MainHeader.css';
 import { ImLocation2 } from 'react-icons/im';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { uiActions } from '../../store/uiSlice';
 
-const MainHeader = (props) => {
+const MainHeader = () => {
+
+    const dispatch = useDispatch();
 
     const manageCityHandler = () => {
-        props.cityButtonClick(true);
+        dispatch(uiActions.showModal());
+    }
+
+    const searchbarFocusHandler = () => {
+        dispatch(uiActions.showSearchbar());
     }
 
     return (
@@ -25,9 +34,9 @@ const MainHeader = (props) => {
                     </button>
                     <nav>
                         <ul>
-                            <button><a href="#">We are hiring!</a></button>
+                            <button><Link to=''>We are hiring!</Link></button>
                             <button>How it works</button>
-                            <button><a href="#">List your Busines</a></button>
+                            <button><Link to='/register'>List your Busines</Link></button>
                             <button>Login/Sign in</button>
                         </ul>
                     </nav>
@@ -36,7 +45,7 @@ const MainHeader = (props) => {
                 <div className='header'>
                     <img src={require('../../assests/logo3.png')} alt="logo"/>
                     <div className="search_btn">
-                        <input type="text" placeholder= '🔍 Search restaurants, spa, events'/>
+                        <input onFocus={searchbarFocusHandler} type="text" placeholder= '🔍 Search restaurants, spa, events'/>
                         <button>Search</button>
                     </div>
                 </div>

@@ -108,8 +108,8 @@
 .esc_btn {
     z-index: 40;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

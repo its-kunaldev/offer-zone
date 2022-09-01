@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './ModalWindow.css';
 
 import { IoClose } from 'react-icons/io5';
+import { uiActions } from '../../../store/uiSlice';
 
 
 
-const ModalWindow = (props) => {
+const ModalWindow = () => {
 
-    const [ isClicked, setIsClicked] = useState(true);
+    const isShow = useSelector(state => state.uiSliceReducer.showCitiesmodal);
+    const dispatch = useDispatch();
 
     const closeModalHandler = () => {
-        setIsClicked(true);
-        props.cityButtonClick(false);
+        dispatch(uiActions.showModal());
     }
 
     return (
         <>
-            <div className={`modal ${ !props.isShow && isClicked && 'hidden' }`}>
+            <div className={`modal ${ !isShow && 'hidden' }`}>
                 <div className="box">
                     <h1>Tell Us Your <span>HomeTown</span></h1>
                     <p>Explore the offers nearby you</p>
                     <form className="city_input">
-                        <img src={require('../../../../assests/location.png')} alt="city" />
+                        <img src={require('../../../assests/location.png')} alt="city" />
                         <input type="text" placeholder='Enter your city'/>
                         <button>Use My Current Location</button>
                     </form>
@@ -41,7 +43,7 @@ const ModalWindow = (props) => {
                         <span>Goa</span>
                     </div>
                     <div className="app_logo">
-                        <img src={require('../../../../assests/logo3.png')} alt="" />
+                        <img src={require('../../../assests/logo3.png')} alt="" />
                     </div>
                 </div>
                 <button onClick={closeModalHandler} className="esc_btn">

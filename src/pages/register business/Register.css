@@ -1,0 +1,16 @@
+.register_business {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register_business nav {
+    width: 100%;
+    padding: 0.8rem 7%;
+}
+
+.register_business img {
+    width: 15rem;
+}
