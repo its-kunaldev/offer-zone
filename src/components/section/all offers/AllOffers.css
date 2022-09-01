@@ -1,0 +1,90 @@
+.all_offers_section {
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: rgb(232, 248, 246);
+    margin-top: -1.9rem;
+    padding-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+.all_offers p {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.519);
+}
+
+.hr2 {
+    margin: 2rem 0;
+    opacity: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.discription {
+    flex-basis: 24%;
+    /* background-color: white; */
+    height: 10vh;
+}
+
+.offers_container {
+    flex-basis: 71%;
+    /* background-color: white; */
+    /* height: 20vh; */
+}
+
+.offers_card {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-offer {
+    width: 19rem;
+    height: 24rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0.7rem;
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.offer_img  {
+    /* flex-basis: 80%; */
+    width: 100%;
+    height: 18rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.offer_img img {
+    width: 100%;
+}
+
+.offer_details h3 {
+    font-size: 20px;
+}
+
+.about_offer {
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.592);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.about_offer span {
+    width: 4rem;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 5px;
+}

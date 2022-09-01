@@ -5,10 +5,6 @@ import './Register.css';
 const Register = () => {
     return (
         <section className='register_business'> 
-            <nav>
-                <img src={require('../../assests/logo3.png')} alt="logo" />
-            </nav>
-            <hr />
             <h2>Register Your Business</h2>
             <form className="row g-3 needs-validation" noValidate>
                 <div className="col-md-4">

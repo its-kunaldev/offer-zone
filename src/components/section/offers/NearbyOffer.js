@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 import './NearbyOffer.css';
@@ -7,7 +8,7 @@ const NearbyOffer = () => {
     return(
         <>
             <div className="nearbuy_offers section">
-                <h2 className='title'>Your Near Zone Offer 🎉  <a href="#">view offers</a></h2>
+                <h2 className='title'>Your Near Zone Offer 🎉  <Link to='/all-offer'>view more</Link></h2>
                 <div className="offers">
                     <div className="offer_card">
                         <div className="img_section">
