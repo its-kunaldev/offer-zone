@@ -1,9 +1,11 @@
-import React  from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 
 import Footer from '../../components/footer/Footer';
 import MainHeader from '../../components/header/MainHeader';
+import Navbar from '../../components/header/Navbar';
 import Brands from '../../components/section/brands/Brands';
+import OfferDetails from '../../components/section/offer details/OfferDetails';
 import NearbyOffer from '../../components/section/offers/NearbyOffer';
 import OtherOffers from '../../components/section/offers/other offers/OtherOffers';
 import AdsSection from '../../components/UI/ads/AdsSection';
@@ -22,6 +24,8 @@ const Main = () => {
             <ModalWindow />
             {isFocus && <Searches />}
             <MainHeader />
+            <Navbar />
+            {/* <OfferDetails /> */}
             <AnimatedAds />
             <AdsSection>
                 <img src={require('../../assests/ads2.png')} alt="ads" className='ads-img' />
