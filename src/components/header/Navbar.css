@@ -17,7 +17,6 @@
 .category {
     width: 8.5rem;
     height: 9rem;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +24,7 @@
     cursor: pointer;
     margin-right: 5px;
     transition: 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .category p{

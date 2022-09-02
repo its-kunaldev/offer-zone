@@ -4,6 +4,7 @@ import './Navbar.css';
 
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -13,72 +14,72 @@ const Navbar = () => {
                 <FaArrowLeft className='arrow' />
 
                 <ul>
-                    <div className="category">
-                        {/* <a href=""> */}
+                    <Link to='all-offers' className="category">
+                        {/* <Link to='/all_offers/sports'> */}
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/mobile.png')} alt="" />
                             </div>
                         </button>
                         <p>Mobile</p>
-                        {/* </a> */}
-                    </div>
-                    <div className="category">
+                        {/* </Link> */}
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/fashion.png')} alt="" />
                             </div>
                         </button>
                         <p>Fashion</p>
-                    </div>
-                    <div className="category">
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/electronics.png')} alt="" />
                             </div>
                         </button>
                         <p>Electronics</p>
-                    </div>
-                    <div className="category">
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/sports.png')} alt="" />
                             </div>
                         </button>
                         <p>Sports</p>
-                    </div>
-                    <div className="category">
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/home.png')} alt="" />
                             </div>
                         </button>
                         <p>Home</p>
-                    </div>
-                    <div className="category">
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/gym.png')} alt="" />
                             </div>
                         </button>
                         <p>Gym</p>
-                    </div>
-                    <div className="category">
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/food.png')} alt="" />
                             </div>
                         </button>
                         <p>Food</p>
-                    </div>
-                    <div className="category">
+                    </Link>
+                    <Link to='all-offers' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/sports.png')} alt="" />
                             </div>
                         </button>
                         <p>Mobile</p>
-                    </div>
+                    </Link>
                 </ul>
 
                 <FaArrowRight className='arrow' />
