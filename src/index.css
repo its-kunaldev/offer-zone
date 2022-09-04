@@ -8,10 +8,13 @@
   /* --primary-color: #39b385; */
   --primary-color: #ffb003;
   --light-color: rgba(122, 122, 122, 0.114);
+  --seconday-color: rgb(232, 248, 246);
   /* --primary-color: #9be15d; */
   /* --primary-color: #4169E1; */
   /* --primary-color: orangered; */
   --width: 85%; 
+  --medium-width: 90%;
+  --small-width: 95%
 }
 
 body {
@@ -28,3 +31,10 @@ body::-webkit-scrollbar {
   width: var(--width);
   margin: 0 auto;
 }
+
+
+/* @media screen and (max-width: 1200px){
+  .section {
+    width: var(--small-width);
+  }
+} */

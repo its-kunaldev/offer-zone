@@ -1,83 +1,167 @@
-import React from 'react';
-
+// import { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { OfferSliceActions } from '../../store/OfferSlice';
 import './Register.css';
 
+// let isSubmit = false;
 const Register = () => {
+
+    const dispatch = useDispatch();
+    const [getData, setGetData] = useState([]);
+    const [isComplete, setIsComplete] = useState(false);
+
+    const isRegister = useSelector(state => state.OfferSliceReducer.isRegister);
+
+    const registerForm = (e) => {
+        e.preventDefault();
+        setGetData({ owner: e.target[0].value, city: e.target[3].value,state: e.target[2].value });
+        dispatch(OfferSliceActions.userRegister());
+    }
+
+    const detailsForm = (e) => {
+        e.preventDefault();
+
+        const input = document.querySelector('.img_input');
+        
+        const imgFiles = input.files[0];
+        if(imgFiles){
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(imgFiles);
+            fileReader.addEventListener('load', () => {
+                // console.log(fileReader.result);
+                setGetData(prevState => {
+                    return { ...prevState, userImg: fileReader.result}
+                });
+            })
+        }
+
+        const select = document.querySelector('.category_select');
+        setGetData(prevState => {
+            return { ...prevState, name: e.target[0].value, category: select.options[select.selectedIndex].text, offer: e.target[2].value, product: e.target[3].value, location: e.target[4].value, discription: e.target[5].value, image: 'offer0', }
+        });
+        dispatch(OfferSliceActions.userRegister());
+        setIsComplete(true);
+    }
+
+    useEffect( () => {
+        if (isComplete) {
+            if(getData.userImg){
+                dispatch(OfferSliceActions.addOffer(getData));
+            }
+        }
+    }, [isComplete, dispatch, getData]);
+
+
+
+
+
+    // const img_preview = document.querySelector('.img_preview');
+// const input = document.querySelector('.img_input');
+// console.log(img_preview);
+
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     const files = input.files[0];
+//     if(files){
+//         const fileReader = new FileReader();
+//         fileReader.readAsDataURL(files);
+//         fileReader.addEventListener('load', () => {
+//             console.log(fileReader.result);
+//             img_preview.innerHTML = `<img src=" ${fileReader.result}" />`;
+
+//         })
+//     }
+// })
+
+
+
     return (
-        <section className='register_business'> 
-            <h2>Register Your Business</h2>
-            <form className="row g-3 needs-validation" noValidate>
-                <div className="col-md-4">
-                    <label htmlFor="validationCustom01" className="form-label">Enter name of your Business</label>
-                    <input type="text" className="form-control" id="validationCustom01" required />
-                    <div className="valid-feedback">
-                        Looks good!
+        <>
+            {!isRegister && !isComplete && <section className='register_business section'>
+                <h2>Register Your Business</h2>
+                <form onSubmit={registerForm}>
+                    <div className="form_input">
+                        <label>Enter your name</label>
+                        <input type="text" required />
                     </div>
-                </div>
-                <div className="col-md-4">
-                    <label htmlFor="validationCustom02" className="form-label">Enetr your name</label>
-                    <input type="text" className="form-control" id="validationCustom02" required />
-                    <div className="valid-feedback">
-                        Looks good!
+                    <div className="form_input">
+                        <label>Phone</label>
+                        <input type="number" required />
                     </div>
-                </div>
-                <div className="col-md-4">
-                    <label htmlFor="validationCustomUsername" className="form-label">Phone</label>
-                    <div className="input-group has-validation">
-                        <span className="input-group-text" id="inputGroupPrepend">+91</span>
-                        <input type="text" className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
-                        <div className="invalid-feedback">
-                            Please choose a username.
-                        </div>
+                    <div className="form_input">
+                        <label>state</label>
+                        <input type="text" required />
                     </div>
-                </div>
-                <div className="col-md-6">
-                    <label htmlFor="validationCustom03" className="form-label">City</label>
-                    <input type="text" className="form-control" id="validationCustom03" required />
-                    <div className="invalid-feedback">
-                        Please provide a valid city.
+                    <div className="form_input">
+                        <label>City</label>
+                        <input type="text" required />
                     </div>
-                </div>
-                <div className="col-md-3">
-                    <label htmlFor="validationCustom04" className="form-label">State</label>
-                    <select className="form-select" id="validationCustom04" required>
-                        <option disabled>Choose...</option>
-                        <option>...</option>
-                    </select>
-                    <div className="invalid-feedback">
-                        Please select a valid state.
+                    <div className="form_input">
+                        <label>Zip code</label>
+                        <input type="number" required />
                     </div>
-                </div>
-                <div className="col-md-3">
-                    <label htmlFor="validationCustom05" className="form-label">Zip</label>
-                    <input type="text" className="form-control" id="validationCustom05" required />
-                    <div className="invalid-feedback">
-                        Please provide a valid zip.
+                    <div className="form_checkbox">
+                        <label>Accept terms and conditions</label>
+                        <input type="checkbox" required />
                     </div>
-                </div>
-                <div className="col-md-3">
-                    <label htmlFor="validationCustom05" className="form-label">Image</label>
-                    <input type="file" className="form-control" id="validationCustom05" required />
-                    <div className="invalid-feedback">
-                        Insert image
+                    <button className='register_btn'>Register</button>
+                </form>
+            </section>}
+
+            {isRegister &&  !isComplete && <section className='offer_info section'>
+                <form onSubmit={detailsForm} >
+                    <div className="form_input">
+                        <label>Enter your shop name</label>
+                        <input type="text" required placeholder='your shop name' />
                     </div>
-                </div>
-                <div className="col-12">
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="invalidCheck" required />
-                        <label className="form-check-label" htmlFor="invalidCheck">
-                            Agree to terms and conditions
-                        </label>
-                        <div className="invalid-feedback">
-                            You must agree before submitting.
-                        </div>
+                    <div className="form_input">
+                        <label>Category</label>
+                        <select className='category_select' name="category">
+                            <option value="" disabled>--select--</option>
+                            <option value="">fashion</option>
+                            <option value="">food</option>
+                            <option value="">home</option>
+                            <option value="">gym</option>
+                            <option value="">sports</option>
+                            <option value="">mobile</option>
+                            <option value="">electronics</option>
+                            <option value="">salon deals</option>
+                        </select>
                     </div>
-                </div>
-                <div className="col-12">
-                    <button className="btn btn-primary" type="submit">Submit form</button>
-                </div>
-            </form>
-        </section>
+                    <div className="form_input">
+                        <label>Enter offer (%)</label>
+                        <input type="number" required placeholder='eg - 10%' />
+                    </div>
+                    <div className="form_input">
+                        <label>Offer Product</label>
+                        <input type="text" required placeholder='eg - shirt, jeans, meals' />
+                    </div>
+                    <div className="form_input">
+                        <label>Shop Adress(In 2-3 words)</label>
+                        <input type="text" required placeholder='eg - model town' />
+                    </div>
+                    <div className="form_input">
+                        <label>Discription</label>
+                        <textarea name="discription" cols="30" rows="5" required></textarea>
+                    </div>
+                    <div className="form_input">
+                        <label>Enter your product image</label>
+                        <input className='img_input' type="file" required/>
+                    </div>
+                    <div className="form_checkbox">
+                        <label>Accept terms and conditions</label>
+                        <input type="checkbox" required />
+                    </div>
+                    <button className='register_btn'>Submit</button>
+                </form>
+            </section>}
+
+            {isComplete && <div className="successfull_message">
+                <h2>Offer Added🎉🎉</h2>
+            </div>}
+        </>
     )
 };
 

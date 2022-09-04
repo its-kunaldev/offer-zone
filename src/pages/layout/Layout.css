@@ -1,0 +1,19 @@
+.all_offer_btn {
+    width: 100%;
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.all_offer_btn a {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(158, 158, 158);
+    padding: 15px 20px;
+    border-radius: 30px;
+    transition: 0.3s ease-in;
+}
+
+.all_offer_btn a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './Searches.css';
 
@@ -7,15 +7,14 @@ import { ImLocation2 } from 'react-icons/im';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { IoClose } from 'react-icons/io5';
 import { uiActions } from '../../../store/uiSlice';
+import { Link } from 'react-router-dom';
 
 const Searches = () => {
 
     const [isChange, setIsChange] = useState('');
-    // const [filterOffers, setFilteredOffer] = useState([]);
+    const allOffers = useSelector(state => state.OfferSliceReducer.allOffers);
 
-    const dummy = ['Barbeque', 'gucci', 'kfc','armani', 'raymonds', 'burger king', 'dominos','subway', 'kalyan', 'shoes'];
-
-    // const isPresent = [];
+    const allProductsName = allOffers.map(offer => offer.name);
 
     const dispatch = useDispatch();
 
@@ -29,19 +28,16 @@ const Searches = () => {
     }
 
     const inputChangeHandler = (e) => {
-        // console.log(e.target.value);
         setIsChange(e.target.value);
-
-        // setFilteredOffer(dummy.filter(d => {
-        //     return d.indexOf(isChange) >= 0 && isChange != '';
-        // }));
     }
-    
-    const isPresent = dummy.filter(d => {
-        return d.toLocaleLowerCase().indexOf(isChange) >= 0 && isChange != '';
+
+    const isPresent = allProductsName.filter(d => {
+        return d.toLocaleLowerCase().indexOf(isChange) >= 0 && isChange !== '';
     });
 
-    // console.log(isPresent);
+    const handler = () =>{
+        dispatch(uiActions.showSearchbar());
+    }
 
     return (
         <>
@@ -59,8 +55,8 @@ const Searches = () => {
                         <button>Search</button>
                     </form>
                     {isPresent.length > 0 && <div className="suggestions">
-                        {isPresent.map(offer => <a href=""><span key={offer}>{offer}</span></a>)}
-                        
+                        {isPresent.map(offer => <Link onClick={handler} key={offer} to={`/offer/${offer}`}><span>{offer}</span></Link>)}
+
                     </div>}
                     <h2>👍 Recommended Searches</h2>
                     <div className="available_offers">
@@ -69,7 +65,7 @@ const Searches = () => {
                         <span>KFC</span>
                         <span>Domino's pizza</span>
                         <span>Hair straightning</span>
-                        <span>Hair spa</span>                        
+                        <span>Hair spa</span>
                     </div>
                     <button onClick={closeModalHandler} className="esc_btn">
                         <IoClose className='close' />

@@ -4,6 +4,11 @@ import Main from './pages/main/Main';
 import Register from './pages/register business/Register';
 import AllOffers from './components/section/all offers/AllOffers';
 import Layout from './pages/layout/Layout';
+import Category from './components/categories/Category';
+import OfferDetails from './components/section/offer details/OfferDetails';
+import About from './pages/about/About';
+import Signup from './pages/form/login/Login.js';
+import Login from './pages/form/signup/Signup';
 
 function App() {
   return (
@@ -13,11 +18,32 @@ function App() {
           <Route path='/' exact>
             <Main />
           </Route>
+          <Route path='/login' exact>
+            <Signup/>
+          </Route>
+          <Route path='/signup' exact>
+            <Login />
+          </Route>
+          <Route path='/about-us'>
+            <About />
+          </Route>
+          {/* <Route path='/termsandcondition'>
+            <Category />
+          </Route> */}
+          <Route path='/offer/:offerId'>
+            <OfferDetails />
+          </Route>
           <Route path='/register'>
             <Register />
           </Route>
-          <Route path='/all-offer'>
+          <Route path='/all-offers' exact>
             <AllOffers />
+          </Route>
+          <Route path='/:city' exact>
+            <Main />
+          </Route>
+          <Route path='/all-offers/:category'>
+            <Category />
           </Route>
         </Switch>
       </Layout>

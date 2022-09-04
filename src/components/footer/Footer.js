@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import './Footer.css';
 
@@ -18,15 +19,15 @@ const Footer = () => {
                         <p>ITPL Road</p>
                         <p>Whitefield, bangalore</p>
                         <p>Karnataka, Pin 144004, India</p>
-                        <p className="email">info@offerzone.com</p>
+                        <Link className="email">officialofferszone@gmail.com</Link>
                         <h4>+91  987654321</h4>
                     </div>
                     <div className="col">
                         <h3>Links <div className="underline"><span></span></div></h3>
                         <ul>
-                            <li><a href="">About us</a></li>
-                            <li><a href="">Policy</a></li>
-                            <li><a href="">Blog</a></li>
+                            <li><Link to={'/about-us'}>About us</Link></li>
+                            <li><Link to={'/blog'}>Blog</Link></li>
+                            <li><Link to={'/termsandcondition'}>Terms &amp; conditions</Link></li>
                         </ul>
                     </div>
                     <div className="col">
@@ -42,10 +43,10 @@ const Footer = () => {
                             <button type="submit">Submit</button>
                         </form>
                         <div className="icons">
-                            <a href=""><img src={require('../../assests/social icons/instagram.png')} alt="instgram" /></a>
-                            <a href=""><img src={require('../../assests/social icons/facebook.png')} alt="facebook" /></a>
-                            <a href=""><img src={require('../../assests/social icons/youtube.png')} alt="youtube" /></a>
-                            <a href=""><img src={require('../../assests/social icons/mail.png')} alt="mail" /></a>
+                            <Link><img src={require('../../assests/social icons/instagram.png')} alt="instgram" /></Link>
+                            <Link><img src={require('../../assests/social icons/facebook.png')} alt="facebook" /></Link>
+                            <Link><img src={require('../../assests/social icons/youtube.png')} alt="youtube" /></Link>
+                            <Link><img src={require('../../assests/social icons/mail.png')} alt="mail" /></Link>
                         </div>
                     </div>
                 </div>

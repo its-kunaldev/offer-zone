@@ -1,7 +1,7 @@
 .all_offers_section {
     width: 100%;
     /* background-color: rgba(0, 0, 0, 0.4); */
-    background-color: rgb(232, 248, 246);
+    background-color: var(--secondary-color);
     margin-top: -1.9rem;
     padding-bottom: 2rem;
     padding: 1rem 0;
@@ -44,7 +44,7 @@
 
 .card-offer {
     width: 19rem;
-    height: 24rem;
+    height: 28rem;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -54,6 +54,16 @@
     margin: 10px;
     box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.7);
     cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.card-offer span {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    width: 5.6rem;
+    border-radius: 7px;
 }
 
 .offer_img  {

@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './AllOffers.css';
 
 const AllOffers = () => {
 
     const allOffers = useSelector(state => state.OfferSliceReducer.allOffers);
+    // console.log(allOffers);
 
     return (
         <section className='all_offers_section'>
@@ -17,22 +19,22 @@ const AllOffers = () => {
                         <h3>Promos &amp; filters</h3>
                     </div>
                     <div className="offers_container">
-                        <h3>Best deals in Jalandhar</h3>
+                        <h3>Best deals in your area</h3>
                         <div className="offers_card">
-
                             {allOffers.map(offer =>
-                                <div key={offer.name} className="card-offer">
+                                <Link to={`/offer/${offer.name}`} key={offer.name} className="card-offer">
                                     <div className="offer_img">
-                                        <img src={require(`../../../assests/offers/${offer.image}.png`)} alt="" />
+                                        <img src={offer.userImg ? offer.userImg : require(`../../../assests/offers/${offer.image}.png`)} alt="" />
                                     </div>
                                     <div className="offer_details">
                                         <h3>{offer.name}</h3>
                                         <p>{offer.location}</p>
-                                        <h4 className='about_offer'><span>Deals</span>{offer.discription} &#8377;{offer.price}</h4>
+                                        <h4 className='about_offer'><span>Deals</span>{offer.discription}</h4>
                                     </div>
-                                </div>
+                                    <hr />
+                                    <span>{offer.offer}% off</span>
+                                </Link>
                             )}
-
                         </div>
                     </div>
                 </div>

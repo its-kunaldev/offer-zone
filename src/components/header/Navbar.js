@@ -8,23 +8,22 @@ import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
+
     return (
         <>
             <nav className='categories section'>
                 <FaArrowLeft className='arrow' />
 
                 <ul>
-                    <Link to='all-offers' className="category">
-                        {/* <Link to='/all_offers/sports'> */}
+                    <Link to={`all-offers/mobile`} className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/mobile.png')} alt="" />
                             </div>
                         </button>
                         <p>Mobile</p>
-                        {/* </Link> */}
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/fashion' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/fashion.png')} alt="" />
@@ -32,7 +31,7 @@ const Navbar = () => {
                         </button>
                         <p>Fashion</p>
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/electronics' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/electronics.png')} alt="" />
@@ -40,7 +39,7 @@ const Navbar = () => {
                         </button>
                         <p>Electronics</p>
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/sports' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/sports.png')} alt="" />
@@ -48,7 +47,7 @@ const Navbar = () => {
                         </button>
                         <p>Sports</p>
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/home' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/home.png')} alt="" />
@@ -56,7 +55,7 @@ const Navbar = () => {
                         </button>
                         <p>Home</p>
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/gym' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/gym.png')} alt="" />
@@ -64,7 +63,7 @@ const Navbar = () => {
                         </button>
                         <p>Gym</p>
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/food' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/food.png')} alt="" />
@@ -72,13 +71,13 @@ const Navbar = () => {
                         </button>
                         <p>Food</p>
                     </Link>
-                    <Link to='all-offers' className="category">
+                    <Link to='all-offers/salon' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/sports.png')} alt="" />
                             </div>
                         </button>
-                        <p>Mobile</p>
+                        <p>Salon Deals</p>
                     </Link>
                 </ul>
 

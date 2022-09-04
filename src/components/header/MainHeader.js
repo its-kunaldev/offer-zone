@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import './MainHeader.css';
 import { ImLocation2 } from 'react-icons/im';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/uiSlice';
 
 const MainHeader = () => {
 
     const dispatch = useDispatch();
+    const currentCity = useSelector(state => state.OfferSliceReducer.currentCity);
 
     const manageCityHandler = () => {
         dispatch(uiActions.showModal());
@@ -26,16 +27,16 @@ const MainHeader = () => {
                     <button onClick={manageCityHandler} className='set_location'>
                         <span><ImLocation2 />Select location</span>
                         <span>
-                            <p>new dehli</p>
+                            <p>{currentCity}</p>
                             <IoMdArrowDropdown />
                         </span>
                     </button>
                     <nav>
                         <ul>
-                            <button><Link to=''>We are hiring!</Link></button>
-                            <button>How it works</button>
-                            <button><Link to='/register'>List your Busines</Link></button>
-                            <button>Login/Sign in</button>
+                            <Link to=''>We are hiring!</Link>
+                            <Link to={'/about-us'} >About us</Link>
+                            <Link to={'/register'}>List your Busines</Link>
+                            <a href="../../pages/login form/signup/login.php">Login/sign in</a>
                         </ul>
                     </nav>
                 </div>
