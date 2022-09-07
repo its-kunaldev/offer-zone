@@ -27,7 +27,7 @@ const Footer = () => {
                         <ul>
                             <li><Link to={'/about-us'}>About us</Link></li>
                             <li><Link to={'/blog'}>Blog</Link></li>
-                            <li><Link to={'/termsandcondition'}>Terms &amp; conditions</Link></li>
+                            <li><Link to={'/policy'}>Terms &amp; conditions</Link></li>
                         </ul>
                     </div>
                     <div className="col">

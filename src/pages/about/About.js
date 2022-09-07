@@ -5,33 +5,27 @@ import './About.css';
 const About = () => {
     return (
         <>
-            <div className="about_section section">
-                <div className="di">
-
-                    <h2 className="cent">Terms &amp; Conditions</h2><br /><br />
-
-                </div>
-                <div className="warC">
-                    <div className="war2">
-                        <p>
-                            By accessing this website we assume you accept these terms
-                            and Conditions. Do not continue to use  OFFERSZONE website if you do not
-                            agree to take all of the terms and Conditions stated on this page
-                        </p>
+            <div class="background">
+                <section class="about">
+                    <div class="main">
+                        <img src={require('../../assests/about.jpg')} />
+                            <div class="all-text">
+                                <h1>ABOUT US </h1>
+                                <p>Our vision of a real world to provide platform (OfferZone) for
+                                    local retailers where they can showcase their products digitally.
+                                    It will help to consumers get to know what's new offers going on their
+                                    area. It gives enviornment for consumers to enjoy shopping offline
+                                    with extra discounts. It makes strong connection between retailer and
+                                    consumers. Our team trying to make this platform as much as better.
+                                    For more info, Click on Read More
+                                </p>
+                                <div class="btn">
+                                    <button type="button"> Read More</button>
+                                </div>
+                            </div>
                     </div>
-
-                    <div className="list">
-                        <ul>
-                            <li>OffersZone is not involve with any Shop or Trade</li><br />
-                            <li>If you are considering any offer. Please consider on your behalf</li><br />
-                            <li>OffersZone is not Responsible for any Financial transactions </li><br />
-                            <li>If any trade is doing any fraud , we can take some Actions </li><br />
-                            <li>For other Queris.Please mail <span>helpdeskofferszone@gmail.com</span></li><br />
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </div>
-
         </>
     )
 };

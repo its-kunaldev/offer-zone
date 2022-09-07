@@ -9,6 +9,7 @@ import OfferDetails from './components/section/offer details/OfferDetails';
 import About from './pages/about/About';
 import Signup from './pages/form/login/Login.js';
 import Login from './pages/form/signup/Signup';
+import Policy from './pages/policy/Policy';
 
 function App() {
   return (
@@ -27,9 +28,9 @@ function App() {
           <Route path='/about-us'>
             <About />
           </Route>
-          {/* <Route path='/termsandcondition'>
-            <Category />
-          </Route> */}
+          <Route path='/policy'>
+            <Policy></Policy>
+          </Route>
           <Route path='/offer/:offerId'>
             <OfferDetails />
           </Route>

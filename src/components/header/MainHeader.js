@@ -36,7 +36,7 @@ const MainHeader = () => {
                             <Link to=''>We are hiring!</Link>
                             <Link to={'/about-us'} >About us</Link>
                             <Link to={'/register'}>List your Busines</Link>
-                            <a href="../../pages/login form/signup/login.php">Login/sign in</a>
+                            <Link to={'/signup'}>Login/sign in</Link>
                         </ul>
                     </nav>
                 </div>

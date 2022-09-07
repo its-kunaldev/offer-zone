@@ -49,6 +49,11 @@
 	margin-bottom: 10px;
 }
 
+.left form a {
+	text-decoration: none;
+	margin-top: 1rem;
+}
+
 .left form h2:after{
 	content: '';
     position: absolute;

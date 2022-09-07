@@ -2,37 +2,16 @@ import React from 'react'
 
 import './Signup.css';
 
-// import { useState } from 'react';
-// import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
 
-    // useEffect( () => {
-    //     fetch('localhost/')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     })
-    // })
+    const registerFormSubmit = (e) => {
+        e.preventDefault();
+        
 
-    // const [result, setResult] = useState('');
-
-    // const signupSubmitHandler = (e) => {
-    //     e.preventDefault();
-    //     const form = $(e.target);
-    //     $.ajax({
-    //         type: "POST",
-    //         url: form.attr("action"),
-    //         data: form.serialize(),
-    //         success(data) {
-    //             setResult(data);
-    //             console.log(data)
-    //         }
-    //     })
-    // }
+        
+    }
 
     return (
         <>
@@ -41,7 +20,7 @@ const Signup = () => {
                     <div class="right"></div>
                     <div class="left">
 
-                        <form action="http://localhost:7882/registeration_process.php" method="POST">
+                        <form onSubmit={registerFormSubmit}>
                             <h2> Sign Up</h2>
                             <input type="text" class="field" name="fullname" placeholder="Your full Name" required />
                             <input type="email" class="field" name="email" placeholder="Your Email" required />
@@ -50,7 +29,7 @@ const Signup = () => {
                             <input type="password" class="field" placeholder="Create Password" name="createpassword" required />
                             <p> Already a Member? <span> <a href="login.html"> Log-In </a> </span>  </p>
 
-                            <button class="btn" type="submit">Register as a Consumer</button>
+                            <Link to={'/login'} class="btn" type="submit">Register as a Consumer</Link>
                         </form>
                     </div>
                 </div>
