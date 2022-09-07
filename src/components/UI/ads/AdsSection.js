@@ -4,7 +4,7 @@ import './AdsSection.css';
 
 const AdsSection = (props) => {
     return(
-        <div className='section ads'> {props.children} </div>
+        <a href='https://bhaviblogging.blogspot.com/2022/09/headphones-offer.html' className='section ads'> {props.children} </a>
     )
 };
 
