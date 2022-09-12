@@ -19,7 +19,7 @@ const Footer = () => {
                         <p>ITPL Road</p>
                         <p>Whitefield, bangalore</p>
                         <p>Karnataka, Pin 144004, India</p>
-                        <Link className="email">officialofferszone@gmail.com</Link>
+                        <Link to='/' className="email">officialofferszone@gmail.com</Link>
                         <h4>+91  987654321</h4>
                     </div>
                     <div className="col">
@@ -43,10 +43,10 @@ const Footer = () => {
                             <button type="submit">Submit</button>
                         </form>
                         <div className="icons">
-                            <Link><img src={require('../../assests/social icons/instagram.png')} alt="instgram" /></Link>
-                            <Link><img src={require('../../assests/social icons/facebook.png')} alt="facebook" /></Link>
-                            <Link><img src={require('../../assests/social icons/youtube.png')} alt="youtube" /></Link>
-                            <Link><img src={require('../../assests/social icons/mail.png')} alt="mail" /></Link>
+                            <Link to='/'><img src={require('../../assests/social icons/instagram.png')} alt="instgram" /></Link>
+                            <Link to='/'><img src={require('../../assests/social icons/facebook.png')} alt="facebook" /></Link>
+                            <Link to='/'><img src={require('../../assests/social icons/youtube.png')} alt="youtube" /></Link>
+                            <Link to='/'><img src={require('../../assests/social icons/mail.png')} alt="mail" /></Link>
                         </div>
                     </div>
                 </div>
