@@ -15,7 +15,7 @@ const Navbar = () => {
                 <FaArrowLeft className='arrow' />
 
                 <ul>
-                    <Link to={`all-offers/mobile`} className="category">
+                    <Link to='all-offers/mobile' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/mobile.png')} alt="" />

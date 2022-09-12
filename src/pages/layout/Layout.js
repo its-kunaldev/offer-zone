@@ -13,7 +13,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 const Layout = (props) => {
 
     const history = useHistory();
-    // console.log(history.location.pathname);
+    console.log(history.location.pathname);
+
 
     const isFocus = useSelector(state => state.uiSliceReducer.isFocus);
 

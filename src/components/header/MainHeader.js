@@ -33,7 +33,7 @@ const MainHeader = () => {
                     </button>
                     <nav>
                         <ul>
-                            <Link to=''>We are hiring!</Link>
+                            <Link to='/hiring'>We are hiring!</Link>
                             <Link to={'/about-us'} >About us</Link>
                             <Link to={'/register'}>List your Busines</Link>
                             <Link to={'/signup'}>Login/sign in</Link>
