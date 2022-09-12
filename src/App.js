@@ -7,8 +7,8 @@ import Layout from './pages/layout/Layout';
 import Category from './components/categories/Category';
 import OfferDetails from './components/section/offer details/OfferDetails';
 import About from './pages/about/About';
-import Signup from './pages/form/login/Login.js';
-import Login from './pages/form/signup/Signup';
+import Login from './pages/form/login/Login';
+import Signup from './pages/form/signup/Signup';
 import Policy from './pages/policy/Policy';
 
 function App() {
@@ -19,10 +19,10 @@ function App() {
           <Route path='/' exact>
             <Main />
           </Route>
-          <Route path='/login' exact>
+          <Route path='/signup' exact>
             <Signup/>
           </Route>
-          <Route path='/signup' exact>
+          <Route path='/login' exact>
             <Login />
           </Route>
           <Route path='/about-us'>
