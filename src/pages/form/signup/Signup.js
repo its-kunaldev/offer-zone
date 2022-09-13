@@ -35,7 +35,7 @@ const Signup = () => {
         if (status === 'completed') {
           history.push('/login');
         }
-      }, [status, history]);
+    }, [status, history]);
     
 
     return (

@@ -6,10 +6,11 @@ import useHTTP from '../../../hook/use-http';
 import { getData } from '../../../api/Api';
 
 import './Login.css';
+import LoadingSpinner from '../../../components/UI/LoadingSpinner';
 
 const Login = () => {
 
-    const {sendRequest, status, data} = useHTTP(getData);
+    const {sendRequest, status, data, error} = useHTTP(getData, true);
 
     console.log(status,data);
     
@@ -19,7 +20,18 @@ const Login = () => {
 
     if(status === 'pending'){
         return(
-            <div className="centered">loading.....</div>
+            <div className="centered">
+                {/* <img src={require('../../../assests/loading.gif')} alt="loader" /> */}
+                <LoadingSpinner />
+            </div>
+        )
+    }
+
+    if(error){
+        return(
+            <div className="centered">
+                <h2>{error}</h2>
+            </div>
         )
     }
 
