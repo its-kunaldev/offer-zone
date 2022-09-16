@@ -1,10 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 
 import './AllOffers.css';
 
 const AllOffers = () => {
+
+    const location = useLocation();
+    // console.log();
 
     const allOffers = useSelector(state => state.OfferSliceReducer.allOffers);
     // console.log(allOffers);
@@ -22,7 +26,7 @@ const AllOffers = () => {
                         <h3>Best deals in your area</h3>
                         <div className="offers_card">
                             {allOffers.map(offer =>
-                                <Link to={`/offer/${offer.name}`} key={offer.name} className="card-offer">
+                                <Link to={`${location.pathname}/${offer.category}/${offer.name}`} key={offer.name} className="card-offer">
                                     <div className="offer_img">
                                         <img src={offer.userImg ? offer.userImg : require(`../../../assests/offers/${offer.image}.png`)} alt="" />
                                     </div>

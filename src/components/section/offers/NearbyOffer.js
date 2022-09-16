@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 import './NearbyOffer.css';
 
-
 const NearbyOffer = () => {
     
     const data = useSelector(state => state.OfferSliceReducer.allOffers);
@@ -28,7 +27,7 @@ const NearbyOffer = () => {
                 <h2 className='title'>Your Near Zone Offer 🎉 {isOfferHad && <Link to='/all-offers'>view more</Link>}</h2>
                 {isOfferHad && <div className="offers">
                     {filteredCity.map(offer =>
-                        <Link to={`/offer/${offer.name}`} key={offer.name} className="offer_card">
+                        <Link to={`/all-offers/${offer.category}/${offer.name}`} key={offer.name} className="offer_card">
                             <div className="img_section">
                                 <img src={require(`../../../assests/offers/${offer.image}.png`)} alt="offers" />
                             </div>

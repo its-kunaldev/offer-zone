@@ -6,6 +6,7 @@ import './App.css';
 import Main from './pages/main/Main';
 import Layout from './pages/layout/Layout';
 import LoadingSpinner from './components/UI/LoadingSpinner';
+
 // import Register from './pages/register business/Register';
 // import AllOffers from './components/section/all offers/AllOffers';
 // import Category from './components/categories/Category';
@@ -50,7 +51,7 @@ function App() {
             <Route path='/policy'>
               <Policy></Policy>
             </Route>
-            <Route path='/offer/:offerId'>
+            <Route path='/all-offers/:category/:offerId'>
               <OfferDetails />
             </Route>
             <Route path='/register'>

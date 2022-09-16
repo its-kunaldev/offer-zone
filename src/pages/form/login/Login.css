@@ -96,7 +96,29 @@
 .field:focus, .typehead:focus{
     border: 2px solid rgb(139, 5, 248);
     background-color: #fff;
+	color: black;
 }
+
+.invalid_credentials {
+	color: red;
+	margin: 1rem 0;
+	/* animation: vibrate 0.1s ease-in; */
+}
+
+@keyframes vibrate{
+	0% {
+		transform: translateX(-5px);
+	}
+
+	50% {
+		transform: translateX(10px);
+	}
+
+	100%{
+		transform: translateX(-5px);
+	}
+}
+
 
 @media screen and (max-width: 880px){
 	.contact-box{
