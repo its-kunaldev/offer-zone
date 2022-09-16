@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const uiSlice = createSlice({
     name: 'UI',
-    initialState: {showCitiesmodal: false, isFocus: false, isCredentialValid: true, isWarningRendered: false},
+    initialState: {showCitiesmodal: false, isFocus: false, isCredentialValid: true, isWarningRendered: false, isLogin: false},
     reducers: {
         showModal(state){
             state.showCitiesmodal = !state.showCitiesmodal;
@@ -16,6 +16,9 @@ const uiSlice = createSlice({
         },
         warningRender(state, action){
             state.isWarningRendered = action.payload;
+        },
+        loginValidity(state){
+            state.isLogin = !state.isLogin;
         }
     }
 });
