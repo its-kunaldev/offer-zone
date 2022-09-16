@@ -45,6 +45,7 @@ const Login = () => {
         e.preventDefault();
 
         if (data.some(d => d.email === inputEmail.current.value && d.password === inputPassword.current.value)){
+            dispatch(uiActions.loginValidity());
             dispatch(uiActions.checkValidity(true));
             history.push('/');
             return;

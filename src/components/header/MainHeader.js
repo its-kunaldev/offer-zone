@@ -11,6 +11,7 @@ const MainHeader = () => {
 
     const dispatch = useDispatch();
     const currentCity = useSelector(state => state.OfferSliceReducer.currentCity);
+    const isLogin = useSelector(state => state.uiSliceReducer.isLogin);
 
     const manageCityHandler = () => {
         dispatch(uiActions.showModal());
@@ -35,8 +36,8 @@ const MainHeader = () => {
                         <ul>
                             <Link to='/hiring'>We are hiring!</Link>
                             <Link to={'/about-us'} >About us</Link>
-                            <Link to={'/register'}>List your Busines</Link>
-                            <Link to={'/signup'}>Login/sign in</Link>
+                            <Link to={isLogin ? '/register' : '/login'}>List your Busines</Link>
+                            <Link to={'/login'}>Login/sign in</Link>
                         </ul>
                     </nav>
                 </div>

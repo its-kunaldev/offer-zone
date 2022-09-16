@@ -15,6 +15,7 @@ const Layout = (props) => {
     const location = useLocation();
 
     const isFocus = useSelector(state => state.uiSliceReducer.isFocus);
+    const isLogin = useSelector(state => state.uiSliceReducer.isLogin);
 
     return (
         <>
@@ -25,7 +26,8 @@ const Layout = (props) => {
                 {props.children}
             </section>
             {location.pathname !== '/signup' && location.pathname !== '/login' && <div className="all_offer_btn">
-                <Link to={'/all-offers'}>View All Offers</Link>
+                <Link to={isLogin ? '/all-offers' : '/login'}>View All Offers</Link>
+                {/* {isLogin && <Link to={'/all-offers'}>View All Offersss</Link>} */}
             </div>}
             {location.pathname !== '/signup' && location.pathname !== '/login' && <Footer />}
         </>

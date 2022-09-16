@@ -9,6 +9,8 @@ const NearbyOffer = () => {
     
     const data = useSelector(state => state.OfferSliceReducer.allOffers);
     const currentCity = useSelector(state => state.OfferSliceReducer.currentCity);
+    const isLogin = useSelector(state => state.uiSliceReducer.isLogin);
+    console.log(isLogin);
     
     
     const filteredCity = data.filter((d, i) => {
@@ -24,7 +26,11 @@ const NearbyOffer = () => {
     return (
         <>
             <div className="nearbuy_offers section">
-                <h2 className='title'>Your Near Zone Offer 🎉 {isOfferHad && <Link to='/all-offers'>view more</Link>}</h2>
+                <h2 className='title'>
+                    Your Near Zone Offer 🎉 
+                    {!isLogin && <Link to='/login'>view more</Link>}
+                    {isOfferHad && isLogin && <Link to='/all-offers'>view more</Link>}
+                </h2>
                 {isOfferHad && <div className="offers">
                     {filteredCity.map(offer =>
                         <Link to={`/all-offers/${offer.category}/${offer.name}`} key={offer.name} className="offer_card">
