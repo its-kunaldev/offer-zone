@@ -2,7 +2,7 @@
     width: 100%;
     /* background-color: rgba(0, 0, 0, 0.4); */
     background-color: var(--secondary-color);
-    margin-top: -1.9rem;
+    margin: 2rem 0;
     padding-bottom: 2rem;
     padding: 1rem 0;
 }

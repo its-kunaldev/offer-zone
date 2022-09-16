@@ -49,7 +49,7 @@ const MainHeader = () => {
                     </div>
                 </div>
             </header>
-            <hr />
+            {/* <hr /> */}
         </>
     )
 };
