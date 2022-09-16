@@ -10,6 +10,63 @@
     margin: 3rem 0;
 }
 
+.category_card-offer {
+    width: 19rem;
+    height: 28rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0.7rem;
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.category_card-offer span {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    width: 5.6rem;
+    border-radius: 7px;
+}
+
+.category_offer_img  {
+    /* flex-basis: 80%; */
+    width: 100%;
+    height: 18rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.category_offer_img img {
+    width: 100%;
+}
+
+.category_offer_details h3 {
+    font-size: 20px;
+}
+
+.category_about_offer {
+    margin: 20px 0;
+    color: rgba(0, 0, 0, 0.592);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.category_about_offer span {
+    width: 4rem;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
 .no-found {
     height: 80vh;
     display: grid;

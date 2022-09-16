@@ -1,11 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 
 import './Category.css';
 
 
 const Category = () => {
+
+    const location = useLocation();
 
     const params = useParams();
 
@@ -26,14 +29,14 @@ const Category = () => {
                 <h2>category :- {params.category}</h2>
                 <div className="categorywise_offer section">
                     {categoryWiseOffer.map(offer =>
-                        <Link to={`/offer/${offer.name}`} key={offer.name} className="card-offer">
-                            <div className="offer_img">
+                        <Link to={`${location.pathname}/${offer.name}`} key={offer.name} className="category_card-offer">
+                            <div className="category_offer_img">
                                 <img src={require(`../../assests/offers/${offer.image}.png`)} alt="" />
                             </div>
-                            <div className="offer_details">
+                            <div className="category_offer_details">
                                 <h3>{offer.name}</h3>
                                 <p>{offer.location}</p>
-                                <h4 className='about_offer'><span>Deals</span>{offer.discription}</h4>
+                                <h4 className='category_about_offer'><span>Deals</span>{offer.discription}</h4>
                             </div>
                             <hr />
                             <span>{offer.offer}% off</span>
