@@ -79,7 +79,7 @@
 
 .header input {
     width: 0;
-    transition: 1s ease-in;
+    transition: 1.3s ease;
     padding: 11.5px;
     border: 1px solid #e0e0e0;
     border-radius: 4px 0 0 4px;

@@ -102,7 +102,7 @@
 .invalid_credentials {
 	color: red;
 	margin: 1rem 0;
-	/* animation: vibrate 0.1s ease-in; */
+	animation: vibrate 0.1s ease-in;
 }
 
 @keyframes vibrate{

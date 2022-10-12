@@ -27,11 +27,11 @@ const useHTTP = (fetchData, startWithPending = false) => {
         dispatch({ type: 'send' })
         try {
             const data = await fetchData(requestedData);
-            //    console.log(data);
             dispatch({ type: 'success', data });
         }
         catch (error) {
-            dispatch({ type: 'error', error: 'Something went wrong!!⚠️⚠️' });
+            // console.log(error.message);
+            dispatch({ type: 'error', error: error.message || 'Something went wrong!!⚠️⚠️' });
         }
 
     }, [fetchData]);

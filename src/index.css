@@ -19,7 +19,7 @@
 
 body {
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   position: relative;
 }
 
@@ -40,8 +40,8 @@ body::-webkit-scrollbar {
 }
 
 
-/* @media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px){
   .section {
     width: var(--small-width);
   }
-} */
+}

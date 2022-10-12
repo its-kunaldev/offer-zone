@@ -1,66 +1,49 @@
 import React from "react";
 import { useRef, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { signinCredentials } from "../../../api/Api";
+import LoadingSpinner from "../../../components/UI/LoadingSpinner";
+import useHTTP from "../../../hook/use-http";
 
 import "./Signup.css";
-
-import useHTTP from "../../../hook/use-http";
-import { addCredentials, getData } from "../../../api/Api";
 
 const Signup = () => {
 
   const inputName = useRef();
   const inputEmail = useRef();
-  const inputNumber = useRef();
-  const inputState = useRef();
   const inputPassword = useRef();
 
   const history = useHistory();
 
 
-  // fetching data from database
-  const { sendRequest, data } = useHTTP(getData);
+  // send data to the database
+  const { sendRequest: sendData, status, error } = useHTTP(signinCredentials);
+  // console.log(error);
 
   useEffect(() => {
-    sendRequest();
-  }, [sendRequest]);
-  // console.log(data);
+    if (status === "completed" && !error) {
+      history.push("/login");
+    }
+  }, [status, history, error]);
 
 
-  
-  // send data to the database
-  const { sendRequest: sendRequestData, status } = useHTTP(addCredentials);
+
+  if (status === 'pending') {
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    )
+  }
+
+
 
   const registerFormSubmit = (e) => {
     e.preventDefault();
 
-    const isHad =  data.find(d => d.email === inputEmail.current.value);
-    // console.log(isHad);
-    if(isHad){
-      alert('This email already used!!');
-      inputName.current.value = '';
-      inputEmail.current.value = '';
-      inputNumber.current.value = '';
-      inputState.current.value = '';
-      inputPassword.current.value = '';
-      return;
-    }
+    sendData({ email: inputEmail.current.value, password: inputPassword.current.value });
 
-    sendRequestData({
-      name: inputName.current.value,
-      email: inputEmail.current.value,
-      number: inputNumber.current.value,
-      state: inputState.current.value,
-      password: inputPassword.current.value,
-    });
   };
-
-  useEffect(() => {
-    if (status === "completed") {
-      history.push("/login");
-    }
-  }, [status, history]);
-
 
   return (
     <>
@@ -86,7 +69,7 @@ const Signup = () => {
                 placeholder="Your Email"
                 required
               />
-              <input
+              {/* <input
                 ref={inputNumber}
                 type="tel"
                 className="field phone"
@@ -95,8 +78,8 @@ const Signup = () => {
                 title="Please enter valid phone number"
                 placeholder="Indian no (+91)"
                 required
-              />
-              <input
+              /> */}
+              {/* <input
                 ref={inputState}
                 type="text"
                 className="field typeahead"
@@ -104,7 +87,7 @@ const Signup = () => {
                 placeholder="Enter your state name "
                 name="statename"
                 required
-              />
+              /> */}
               <input
                 ref={inputPassword}
                 type="password"
@@ -113,6 +96,7 @@ const Signup = () => {
                 name="createpassword"
                 required
               />
+              {error && <h5 className="error_message">{error}</h5>}
               <p>
                 Already a Member?
                 <span>
