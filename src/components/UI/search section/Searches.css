@@ -9,7 +9,7 @@
 }
 
 .searchbox {
-    width: var(--width);
+    /* width: var(--width); */
     margin: 4rem auto;
 }
 
@@ -55,6 +55,9 @@
 
 .available_offers {
     margin-top: 2.6rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
 }
 
 .available_offers span {
@@ -64,7 +67,7 @@
     font-size: 16.4px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.51);
-    margin: 10px;
+    /* margin: 10px; */
     cursor: pointer;
     transition: 0.1s ease-in;
 }
@@ -107,3 +110,29 @@
 .suggestions::-webkit-scrollbar-corner{
     display: none;
 }
+
+@media screen and (max-width: 1000px){
+    .available_offers {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .available_offers span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .search input {
+        font-size: 12px;
+    }
+
+    .searchbox h2 {
+        font-size: 18px;
+    } 
+    .available_offers {
+        grid-template-columns: repeat(2, 1fr);
+    }   
+    .available_offers span {
+        font-size: 13px;
+    }
+}
+

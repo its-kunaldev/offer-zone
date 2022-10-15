@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Libre+Baskerville:ital@1&display=swap');
+
+.subsciptions_plans {
+    width: 70%;
+    /* height: 100vh; */
+    margin: 3rem auto 10rem;
+}
+
+.subsciptions_plans h2{
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 28px;
+    font-family: 'Secular One', sans-serif;
+}
+
+.subsciptions_plans p{
+    font-size: 20px;
+    color: var(--gradient-color);
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+}
+
+.allPlans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 4rem;
+    color: white;
+}
+
+.plan {
+    /* width: 20rem; */
+    /* height: 35rem; */
+    max-width: 20rem;
+    background: var(--gradient-color);
+    border-radius: 3rem;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    /* display: grid;
+    grid-template-rows: 20% 55% 20%;
+    row-gap: 25px; */
+}
+
+.plan_name p {
+    font-size: 30px;
+}
+
+.plan_name p span {
+    font-size: 20px;
+}
+
+.plan_features ul {
+    min-height: 16rem;
+    padding: 15px 0;
+}
+
+.plan_features ul li {
+    font-size: 19px;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    color: rgb(167, 167, 167);
+    margin-bottom: 20px;
+}
+
+.plan_features ul li::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.explore_btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tryFree_btn, .getPlan_btn {
+    margin-bottom: 10px;
+    padding: 13px 23px;
+    font-size: 17px;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(97, 197, 237);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: black;
+}
+
+
+/* styling for 1st and 3rd plan */
+.plan:nth-child(1), .plan:nth-child(3){
+    box-shadow: inset 0 0 1px 6px rgb(97, 197, 237);
+}
+.plan:nth-child(1) .plan_name h2, .plan:nth-child(3) .plan_name h2{
+    color: rgb(97, 197, 237);
+}
+.plan:nth-child(1) .plan_features ul li::before, .plan:nth-child(3) .plan_features ul li::before{
+    background-color: rgb(97, 197, 237);
+}
+
+
+/* styling for 2nd plan */
+.plan:nth-child(2){
+    transform: scale(1.05);
+    box-shadow: inset 0 0 2px 8px var(--primary-color);
+}
+.plan:nth-child(2) .tryFree_btn, .plan:nth-child(2) .getPlan_btn{
+    background: var(--primary-color);
+}
+.plan:nth-child(1) .tryFree_btn, .plan:nth-child(1) .getPlan_btn, .plan:nth-child(3) .tryFree_btn, .plan:nth-child(3) .getPlan_btn{
+    background: rgb(97, 197, 237);
+}
+
+.header {
+    position: absolute;
+    font-size: 14px;
+    top: -13px;
+    left: -58px;
+    width: 10rem;
+    height: 6rem;
+    color: black;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-color);
+    transform: rotate(-50deg);
+    padding-top: 2.5rem;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1200px){
+    .subsciptions_plans {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .subsciptions_plans {
+        width: 80%;
+    }
+
+    .allPlans {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .subsciptions_plans {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .allPlans {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+    .subsciptions_plans {
+        width: 90%;
+    }
+
+    .plan_features ul li {
+        font-size: 17px;
+    }
+}
+

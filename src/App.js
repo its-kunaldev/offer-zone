@@ -6,6 +6,9 @@ import './App.css';
 import Main from './pages/main/Main';
 import Layout from './pages/layout/Layout';
 import LoadingSpinner from './components/UI/LoadingSpinner';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { OfferSliceActions } from './store/OfferSlice';
 
 // import Register from './pages/register business/Register';
 // import AllOffers from './components/section/all offers/AllOffers';
@@ -26,10 +29,47 @@ const Category = React.lazy(() => import('./components/categories/Category'));
 const Policy = React.lazy(() => import('./pages/policy/Policy'));
 
 function App() {
+
+  // fetch(`'https://geocode.xyz/${lat},${lng}?geoit=json&auth=928665935512164980712x43295`)
+  // fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&apiKey=cae18cbf6f11471a83f398e5d3d6a939`)
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    const fetchUserLocation = async (lat, lng) => {
+      const response = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=928665935512164980712x43295`)
+
+      if (!response.ok) {
+        throw Error('Location could not fetch');
+      }
+
+      const data = await response.json();
+      // console.log(data);
+      const city = data.city;
+      dispatch(OfferSliceActions.currentLocation(city.toLowerCase()));
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((pos) => {
+        const { latitude: lat, longitude: lng } = pos.coords;
+        // console.log(lat,lng);
+
+        fetchUserLocation(lat, lng);
+      },
+      () => {
+        alert('Location not found');
+      });
+    }
+
+  }, [dispatch]);
+
+
+
   return (
     <div className='App'>
       <Layout>
-        <Suspense 
+        <Suspense
           fallback={
             <div className='centered'>
               <LoadingSpinner />

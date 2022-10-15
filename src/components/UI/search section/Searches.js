@@ -28,7 +28,7 @@ const Searches = () => {
     }
 
     const inputChangeHandler = (e) => {
-        setIsChange(e.target.value);
+        setIsChange(e.target.value.toLowerCase());
     }
 
     const isPresent = allProductsName.filter(d => {
@@ -42,7 +42,7 @@ const Searches = () => {
     return (
         <>
             <section className="search_area">
-                <div className="searchbox">
+                <div className="searchbox section">
                     <button onClick={manageCityHandler} className='set_location'>
                         <span><ImLocation2 />Change location</span>
                         <span>
@@ -61,11 +61,13 @@ const Searches = () => {
                     <h2>👍 Recommended Searches</h2>
                     <div className="available_offers">
                         <span>Barbeque Nation</span>
-                        <span>Pirates of Grill, Jalandhar</span>
+                        <span>Pirates of Grill</span>
                         <span>KFC</span>
                         <span>Domino's pizza</span>
                         <span>Hair straightning</span>
                         <span>Hair spa</span>
+                        <span>Gucci</span>
+                        <span>D-mart</span>
                     </div>
                     <button onClick={closeModalHandler} className="esc_btn">
                         <IoClose className='close' />

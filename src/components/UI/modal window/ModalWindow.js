@@ -25,7 +25,7 @@ const ModalWindow = () => {
     }
 
     const inputChangeHandler = (e) => {
-        setIsChange(e.target.value);
+        setIsChange(e.target.value.toLowerCase());
     }
 
     const isPresent = allCities.filter(d => {
@@ -58,7 +58,7 @@ const ModalWindow = () => {
                         <input type="text" value={isChange} onChange={inputChangeHandler} placeholder='Enter your city' />
                         <button type='button'>Use my location</button>
                         {isPresent.length > 0 && <div className="city_suggestions">
-                            {isPresent.map(offer => <Link to={`/${offer}`} onClick={linkHandler}><span key={offer}>{offer}</span></Link>)}
+                            {isPresent.map(offer => <Link to={`/${offer}`} key={offer} onClick={linkHandler}><span key={offer}>{offer}</span></Link>)}
                         </div>}
                     </form>
                     <h2>Top Cities</h2>

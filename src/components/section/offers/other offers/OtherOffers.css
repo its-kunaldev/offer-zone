@@ -10,14 +10,10 @@
 }
 
 .salon_card {
-    width: 15rem;
-    height: 20rem;
+    /* width: 15rem; */
+    /* height: 20rem; */
     border-radius: 1rem;
     cursor: pointer;
-    /* background-image: url(../../../../assests//offers/offer4.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; */
 }
 
 .salon_card img {
@@ -28,4 +24,30 @@
 
 .dinning_offers{
     margin: 1rem auto 5rem;
+}
+
+@media screen and (max-width: 900px){
+    .other_offers {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px){
+    .other_offers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .salon_offers h2 {
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .other_offers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .salon_offers h2 {
+        font-size: 19px;
+    }
 }

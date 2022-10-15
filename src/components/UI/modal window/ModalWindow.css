@@ -11,7 +11,6 @@
 
 .box {
     width: 100%;
-    height: 70%;
     /* border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%; */
     background-color: white;
@@ -19,6 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 .box h1 {
@@ -77,7 +77,10 @@
 
 .top_cities {
     margin: 1rem 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    row-gap: 10px;
+    place-items: center;
 }
 
 .top_cities a {
@@ -87,7 +90,6 @@
     font-size: 16.4px;
     font-weight: 400;
     color: rgb(54, 54, 54);
-    margin: 10px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -166,4 +168,49 @@
 }
 .city_suggestions::-webkit-scrollbar-corner{
     display: none;
+}
+
+@media screen and (max-width: 1200px){
+    .top_cities {
+        grid-template-columns: repeat(7,1fr);
+    }
+}
+
+@media screen and (max-width: 750px){
+    .top_cities {
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .esc_btn {
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .box {
+        padding: 1rem;
+    }
+    .box h1 {
+        margin-top: 3rem;
+        font-size: 26px;
+    }
+
+    .box p {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .top_cities {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .city_input {
+        width: auto;
+    }
+
+    .city_input button {
+        padding: 18px 4px;
+        font-size: 12px;
+        font-family: 'Times New Roman', Times, serif;
+    }
 }

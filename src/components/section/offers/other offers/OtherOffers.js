@@ -6,6 +6,7 @@ import './OtherOffers.css';
 const OtherOffers = () => {
     return(
         <>
+            <hr className='hr'/>
             <div className="salon_offers section">
                 <h2 className='title'>Super Salon days - upto 50% off!! Hurry up!🎉</h2>
                 <div className="other_offers">

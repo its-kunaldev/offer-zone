@@ -25,6 +25,7 @@ const NearbyOffer = () => {
 
     return (
         <>
+            <hr className='hr'/>
             <div className="nearbuy_offers section">
                 <h2 className='title'>
                     Your Near Zone Offer 🎉 

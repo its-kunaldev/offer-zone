@@ -15,7 +15,7 @@ const initialState = {
             state: 'punjab'
         },
         {
-            owner: 'bhevnish',
+            owner: 'bhavnish',
             name: 'KFC',
             location: 'Central town',
             image: 'offer7',
@@ -63,7 +63,7 @@ const initialState = {
             state: 'punjab'
         },
         {
-            owner: 'preeti',
+            owner: 'Love preet',
             name: 'Barbeque Nation',
             location: 'Rainbow Road',
             image: 'offer9',
@@ -75,7 +75,7 @@ const initialState = {
             state: 'punjab'
         },
         {
-            owner: 'sneha',
+            owner: 'Subhash',
             name: 'Subway',
             location: 'Modal town',
             image: 'offer2',
@@ -87,7 +87,7 @@ const initialState = {
             state: 'punjab'
         },
         {
-            owner: 'deepti',
+            owner: 'Vinay chopra',
             name: 'Gucci',
             location: 'Modal town',
             image: 'offer11',
@@ -135,7 +135,7 @@ const initialState = {
             state: 'punjab'
         },
         {
-            owner: 'neha',
+            owner: 'Rakesh',
             name: 'RS Electronics',
             location: 'Preet nagar',
             image: 'offer15',
@@ -147,7 +147,7 @@ const initialState = {
             state: 'punjab'
         },
         {
-            owner: 'sakshi',
+            owner: 'Chirag Thakur',
             name: 'Quality play',
             location: 'Gujja peer',
             image: 'offer16',
@@ -160,7 +160,7 @@ const initialState = {
         },
     ],
     allCities: ['new dehli','jalandhar', 'amritsar', 'ludhiana', 'phagwara', 'batala', 'kapurthala', 'firojpur', 'chandigarh', 'patiala', 'nabha'],
-    currentCity: 'jalandhar',
+    currentCity: '',
     isRegister: false
 };
 

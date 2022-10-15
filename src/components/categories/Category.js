@@ -24,10 +24,10 @@ const Category = () => {
     }
 
     return (
-        <section className='Categories_section'>
-            <div className="section">
-                <h2>category :- {params.category}</h2>
-                <div className="categorywise_offer section">
+        // <section className='Categories_section'>
+            <div className="Categories_section section">
+                <h2>Checkout {params.category} Offers Nearby Your</h2>
+                <div className="categorywise_offer">
                     {categoryWiseOffer.map(offer =>
                         <Link to={`${location.pathname}/${offer.name}`} key={offer.name} className="category_card-offer">
                             <div className="category_offer_img">
@@ -44,7 +44,7 @@ const Category = () => {
                     )}
                 </div>
             </div>
-        </section>
+        // </section>
     )
 };
 

@@ -1,8 +1,10 @@
 .Categories_section {
-    width: 100%;
-    /* height: 100vh; */
-    background-color: var(--secondary-color);
-    margin: 2rem 0;
+    margin: 2rem auto;
+}
+
+.Categories_section h2 {
+    font-family: 'Secular One', sans-serif;
+    font-size: 20px;
 }
 
 .categorywise_offer {
@@ -12,7 +14,7 @@
 }
 
 .category_card-offer {
-    width: 19rem;
+    /* width: 19rem; */
     height: 28rem;
     background-color: white;
     display: flex;
@@ -38,7 +40,8 @@
 .category_offer_img  {
     /* flex-basis: 80%; */
     width: 100%;
-    height: 18rem;
+    height: 100%;
+    /* height: 18rem; */
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 1.5rem;
@@ -46,6 +49,7 @@
 
 .category_offer_img img {
     width: 100%;
+    height: 100%;
 }
 
 .category_offer_details h3 {
@@ -77,4 +81,32 @@
 .no-found p {
     font-size: 21px;
     font-weight: 600;
+}
+
+@media screen and (max-width: 1100px){
+    .Categories_section {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .categorywise_offer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 750px){
+    .categorywise_offer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .Categories_section {
+        width: 92%;
+    }
+
+    .categorywise_offer {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

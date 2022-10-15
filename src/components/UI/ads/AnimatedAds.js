@@ -8,15 +8,15 @@ const AnimatedAds = () => {
         <>
             <div className="moving_ads">
                 <div className="all_ads">
-                    <a href='https://bhaviblogging.blogspot.com/2022/09/headphones-offer.html' className="ad">
+                    <div className="ad">
                         <img src={require('../../../assests/ads1.png')} alt="ad1" className='ads-img'/>
-                    </a>
-                    <a href='https://bhaviblogging.blogspot.com/2022/09/headphones-offer.html' className="ad">
+                    </div>
+                    <div className="ad">
                         <img src={require('../../../assests/ads2.png')} alt="ad1" className='ads-img'/>
-                    </a>
-                    <a href='https://bhaviblogging.blogspot.com/2022/09/headphones-offer.html' className="ad">
+                    </div>
+                    <div className="ad">
                         <img src={require('../../../assests/ads1.png')} alt="ad1" className='ads-img'/>
-                    </a>
+                    </div>
                 </div>
             </div>
         </>

@@ -24,7 +24,7 @@
 }
 
 .offer_card {
-    width: 19rem;
+    /* width: 19rem; */
     max-height: 25rem;
     /* height: 25rem; */
     /* background-color: gray; */
@@ -109,4 +109,31 @@
     text-align: center;
     margin: 2rem 0 ;
     color: red;
+}
+
+@media screen and (max-width: 1000px){
+    .offers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px){
+    .offers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .offers {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .title {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .title a {
+        font-size: 14px;
+        text-decoration: none;
+    }
 }
