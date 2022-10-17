@@ -22,7 +22,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   position: relative;
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::-webkit-scrollbar {

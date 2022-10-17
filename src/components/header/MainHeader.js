@@ -76,7 +76,7 @@ const MainHeader = () => {
                         {isLogin && <button onClick={userAccountHandler} className='userAccountBtn'><FaUserAlt /></button>}
                     </div>
 
-                    <div className={`${isToggle ? 'active' : ''} userAccountMenu`}>
+                    {isLogin && <div className={`${isToggle ? 'active' : ''} userAccountMenu`}>
                         <div className="userDetail">
                             <span><FaUserAlt /></span>
                             <h4>Signed in as <br /> <p>Kunal Thakur</p></h4>
@@ -93,7 +93,7 @@ const MainHeader = () => {
                         <hr />
                         <button className='signout'>Sign out</button>
                     </div>
-
+}
                 </div>
 
                 <div className='titleAndSearchbar'>
