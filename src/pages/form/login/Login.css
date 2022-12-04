@@ -20,8 +20,9 @@
 	/* filter: blur(50px); */
 	z-index: -1;
 }
+
 .contact-box{
-	max-width: 850px;
+	max-width: 650px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);	
 	justify-content: center;
@@ -31,12 +32,17 @@
 	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
 }
 
-.right{
+/* .right{
 	background: url("../../../assests//form//login_vector.jpg") no-repeat center;
 	background-size: cover;
 	height: 100%;
+	width: 100%;
+}   */
 
-}  
+.right img {
+	width: 100%;
+	height: 100%;
+}
 
 
 .left{
@@ -47,6 +53,10 @@
 	position: relative;
 	padding: 0 0 10px;
 	margin-bottom: 10px;
+}
+
+.left form p {
+	margin-top: 10px;
 }
 
 .left form h2:after{
@@ -105,6 +115,20 @@
 	animation: vibrate 0.1s ease-in;
 }
 
+.loginDirectlyWith {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.loginDirectlyWith button {
+	background: var(--gradient-color);
+	color: white;
+	padding: 11px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
 @keyframes vibrate{
 	0% {
 		transform: translateX(-5px);
@@ -131,7 +155,6 @@
 }
 
 .typeahead {
-
     top: 400px !important;
     right: 50px !important;
 }

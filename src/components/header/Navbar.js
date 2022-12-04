@@ -6,8 +6,55 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-
 const Navbar = () => {
+
+    // const { fetchFirebaseStorage: fetchData, data, error } = useGetStorage();
+    // console.log(data);
+
+    // useEffect(() => {
+    //     fetchData('allCategories');
+    // }, [fetchData]);
+
+    // if (error) {
+    //     return (
+    //         <h1>Failed!</h1>
+    //     )
+    // }
+
+    const allCategories = [
+        {
+            categoryName: 'Mobile',
+            imgUrl: 'mobile.png'
+        },
+        {
+            categoryName: 'Fashion',
+            imgUrl: 'fashion.png'
+        },
+        {
+            categoryName: 'Food',
+            imgUrl: 'food.png'
+        },
+        {
+            categoryName: 'Electronics',
+            imgUrl: 'electronics.png'
+        },
+        {
+            categoryName: 'Home',
+            imgUrl: 'home.png'
+        },
+        {
+            categoryName: 'Sports',
+            imgUrl: 'sports.png'
+        },
+        {
+            categoryName: 'Gym',
+            imgUrl: 'gym.png'
+        },
+        {
+            categoryName: 'Salon Deals',
+            imgUrl: 'sports.png'
+        }
+    ];
 
     return (
         <>
@@ -15,15 +62,17 @@ const Navbar = () => {
                 <FaArrowLeft className='arrow' />
 
                 <ul>
-                    <Link to='all-offers/mobile' className="category">
-                        <button>
-                            <div className='inner-circle'>
-                                <img src={require('../../assests/mobile.png')} alt="" />
-                            </div>
-                        </button>
-                        <p>Mobile</p>
-                    </Link>
-                    <Link to='all-offers/fashion' className="category">
+                    {allCategories.map(data =>
+                        <Link key={data.categoryName} to={`all-offers/${data.categoryName.toLowerCase()}`} className="category">
+                            <button>
+                                <div className='inner-circle'>
+                                    <img src={require(`../../assests/allCategories/${data.imgUrl}`)} alt="" />
+                                </div>
+                            </button>
+                            <p>{data.categoryName}</p>
+                        </Link>
+                    )}
+                    {/* <Link to='all-offers/fashion' className="category">
                         <button>
                             <div className='inner-circle'>
                                 <img src={require('../../assests/fashion.png')} alt="" />
@@ -78,7 +127,7 @@ const Navbar = () => {
                             </div>
                         </button>
                         <p>Salon Deals</p>
-                    </Link>
+                    </Link> */}
                 </ul>
 
                 <FaArrowRight className='arrow' />

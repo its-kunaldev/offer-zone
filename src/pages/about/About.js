@@ -8,10 +8,11 @@ const About = () => {
             <div class="background">
                 <section class="about">
                     <div class="main">
-                        <img src={require('../../assests/about.jpg')} />
+                        <img src={require('../../assests/about.jpg')} alt='aboutus'/>
                             <div class="all-text">
                                 <h1>ABOUT US </h1>
-                                <p>Our vision of a real world to provide platform (OfferZone) for
+                                <p>
+                                    Our vision of a real world to provide platform (OfferZone) for
                                     local retailers where they can showcase their products digitally.
                                     It will help to consumers get to know what's new offers going on their
                                     area. It gives enviornment for consumers to enjoy shopping offline

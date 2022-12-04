@@ -1,6 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom';
+// import { useSelector } from 'react-redux';
+// import { useParams } from 'react-router-dom/cjs/react-router-dom';
 
 import './OfferDetails.css';
 
@@ -12,10 +12,10 @@ import { BiTimeFive } from 'react-icons/bi';
 
 const OfferDetails = () => {
 
-    const params = useParams();
-    const allOffers = useSelector(state => state.OfferSliceReducer.allOffers);
+    // const params = useParams();
+    // const allOffers = useSelector(state => state.OfferSliceReducer.allOffers);
 
-    const clickedOfffer = allOffers.find(offer => offer.name === params.offerId);
+    // const clickedOfffer = allOffers.find(offer => offer.name === params.offerId);
 
     return (
         <section className='single_offer_detail section'>

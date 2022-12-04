@@ -49,7 +49,9 @@ const Signup = () => {
     <>
       <div className="signup_container">
         <div className="contact-box">
-          <div className="right"></div>
+          <div className="right">
+            <img src={require('../../../assests//form//signup.jpg')} alt="" />
+          </div>
           <div className="left">
             <form onSubmit={registerFormSubmit}>
               <h2> Sign Up</h2>

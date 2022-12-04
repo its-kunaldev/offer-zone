@@ -1,5 +1,3 @@
-// const httpApi = 'https://credentials-8e9d4-default-rtdb.firebaseio.com';
-
 export const signinCredentials = async (requestedData) => {
     const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCNEtJN8ksVoDLGTRoPOrtiRQqbQn6ogn0', {
         method: 'POST',
@@ -45,3 +43,4 @@ export const loginCredentials = async (requestedData) => {
 
     return data;
 }
+
